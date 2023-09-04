@@ -9,5 +9,7 @@ AAA Principles:
 - assert
 
 Setup
-
 Teardown
+
+Tests should be independent
+Reduce code duplication

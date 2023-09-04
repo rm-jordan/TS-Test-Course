@@ -1,6 +1,6 @@
 import { getStringInfo, toUpperCase } from "../app/Utils";
 
-describe('Utils test suite', () => {
+describe('Utils test suite', ()=>{
     it('should return uppercase of valid string', () => {
         const sut = toUpperCase
         const expected = 'ABC'
