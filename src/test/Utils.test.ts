@@ -37,7 +37,7 @@ describe('getStringInfo for arg My-String should', ()=>{
       expect(actual.extraInfo).toBeDefined();
   })
 
-  test('return right extra info', ()=>{
+  test('return correct extra info', ()=>{
       const actual = getStringInfo('My-String')
       expect(actual.extraInfo).toEqual({})
   })
