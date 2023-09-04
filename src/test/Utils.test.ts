@@ -2,7 +2,7 @@ import { StringUtils, getStringInfo, toUpperCase } from "../app/Utils";
 
 describe('Utils test suite', ()=>{
 
-    describe.only('StringUtils Test', ()=>{
+    describe('StringUtils Test', ()=>{
 
     let sut: StringUtils
 
@@ -17,12 +17,22 @@ describe('Utils test suite', ()=>{
     })
 
     it('should return correct uppercase', ()=>{
-
         const actual = sut.toUpperCase('abc')
         expect(actual).toBe('ABC')
         console.log('Actual Test')
 
         })
+
+        // Testing for Errors:
+
+        it.only('should throw error when there is an invalid argument -  function', ()=>{
+
+            function expectError() {
+                const actual = sut.toUpperCase('')
+            }
+            expect(expectError).toThrow()
+            expect(expectError).toThrowError('Invalid argument!')
+            })
     })
 
 
