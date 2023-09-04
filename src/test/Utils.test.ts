@@ -25,13 +25,32 @@ describe('Utils test suite', ()=>{
 
         // Testing for Errors:
 
-        it.only('should throw error when there is an invalid argument -  function', ()=>{
+        it('should throw error when there is an invalid argument -  function', ()=>{
 
             function expectError() {
                 const actual = sut.toUpperCase('')
             }
             expect(expectError).toThrow()
             expect(expectError).toThrowError('Invalid argument!')
+            })
+
+            it('Should throw error on invalid argument - arrow function', ()=>{      
+                expect(()=>{
+                sut.toUpperCase('')
+                }).toThrowError('Invalid argument!')
+            })
+
+            it.only('Should throw error on invalid argument - try catch block', (done)=>{      
+                jest.setTimeout(15000)
+                try {
+                    sut.toUpperCase('')
+                    done('GetStringInfo should throw error for Invalid argument!')
+                } catch (error) {
+                    expect(error).toBeInstanceOf(Error)
+                    expect(error).toHaveProperty('message', 'Invalid argument!')
+                    done()
+                }
+
             })
     })
 
