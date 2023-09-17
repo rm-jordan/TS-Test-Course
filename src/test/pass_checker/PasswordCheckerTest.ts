@@ -7,7 +7,14 @@ describe('PasswordChecker test suite',  ()=>{
   beforeEach(()=> {
     sut = new PasswordChecker()
   })
-  it('this should do nothing at this time', ()=> {
-    sut.checkPassword
+
+  it('Password with less than eight characters is invalid', ()=> {
+  const actual =  sut.checkPassword('1234567')
+  expect(actual).toBe(false)
   })
+
+  it('Password with more than eight characters is valid', ()=> {
+    const actual =  sut.checkPassword('12345678')
+    expect(actual).toBe(true)
+    })
 })
