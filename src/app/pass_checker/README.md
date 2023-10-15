@@ -9,3 +9,7 @@ A password is invalid if:
 Requirement 2:
 
 - return the reasons that make a password invalid
+
+Requirement 3:
+
+- Admin password should also contain a number

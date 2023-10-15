@@ -40,4 +40,9 @@ describe('PasswordChecker test suite',  ()=>{
       expect(actual.reasons).toHaveLength(0)
       expect(actual.valid).toBe(true)
     })
+    it('Complex password is valid', () => {
+      const actual = sut.checkPassword('1234abcD')
+      expect(actual.reasons).toHaveLength(0)
+      expect(actual.valid).toBe(true)
+  })
 })
