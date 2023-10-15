@@ -27,7 +27,7 @@ describe('PasswordChecker test suite',  ()=>{
 
     it('Password with an upper case letter is valid', ()=> {
       const actual =  sut.checkPassword('abcD')
-      expect(actual.reasons).not.toContain(PasswordErrors.NO_LOWER_CASE)
+      expect(actual.reasons).not.toContain(PasswordErrors.NO_UPPER_CASE)
     })
 
     it('Password with no lower case letter is invalid', ()=> {
